@@ -1,0 +1,67 @@
+#
+#    List of Device Tree ID's
+#
+#    Version: 2018.05.19
+#    Maintained by: Burt P. (pburt0@gmail.com)
+#    https://github.com/bp0/dtid
+#
+# Syntax:
+# class compat_string full name
+#
+# '*' at the end of a compat_string for wildcard match.
+# Searched in order, so be careful not to put a wildcard
+# before a string it would match.
+#
+
+vendor brcm        Broadcom
+vendor nvidia      nVidia
+vendor rockchip    RockChip
+vendor ti          Texas Instruments
+vendor qcom        Qualcomm
+vendor mediatek    MediaTek
+vendor arm         ARM
+vendor raspberrypi Raspberry Pi
+
+soc brcm,bcm2837         BCM2837
+soc brcm,bcm2836         BCM2836
+soc brcm,bcm2835         BCM2835
+soc ti,omap5432          OMAP5432
+soc ti,omap5430          OMAP5430
+soc ti,omap4470          OMAP4470
+soc ti,omap4460          OMAP4460
+soc ti,omap4430          OMAP4430
+soc ti,omap3620          OMAP3620
+soc ti,omap3450          OMAP3450
+soc ti,omap5*            OMAP5-family
+soc ti,omap4*            OMAP4-family
+soc ti,omap3*            OMAP3-family
+soc ti,omap2*            OMAP2-family
+soc ti,omap1*            OMAP1-family
+soc mediatek,mt6799      MT6799 Helio X30
+soc mediatek,mt6799      MT6799 Helio X30
+soc mediatek,mt6797x     MT6797X Helio X27
+soc mediatek,mt6797t     MT6797T Helio X25
+soc mediatek,mt6797      MT6797 Helio X20
+soc mediatek,mt6757T     MT6757T Helio P25
+soc mediatek,mt6757      MT6757 Helio P20
+soc mediatek,mt6795      MT6795 Helio X10
+soc mediatek,mt6755      MT6755 Helio P10
+soc mediatek,mt6750t     MT6750T
+soc mediatek,mt6750      MT6750
+soc mediatek,mt6753      MT6753
+soc mediatek,mt6752      MT6752
+soc mediatek,mt6738      MT6738
+soc mediatek,mt6737t     MT6737T
+soc mediatek,mt6735      MT6735
+soc mediatek,mt6732      MT6732
+soc qcom,msm8939         Snapdragon 615
+soc qcom,msm*            Snapdragon family
+soc nvidia,tegra*        Tegra family
+
+cpu arm,cortex-a53 Cortex A53
+cpu arm,cortex*    Cortex family
+
+gpu brcm,bcm2835-vc4    VideoCore IV
+
+board raspberrypi,3-model-b-plus      3 Model B Plus
+board ti,omap3-beagleboard-xm         Beagleboard
