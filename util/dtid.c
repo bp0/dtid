@@ -83,12 +83,12 @@ static char *scan_dtids_file(const char *dtids_file, const char *compat_string, 
     return NULL;
 }
 
-static int dtid(const char *dtids_file, const char *compat_string, char **name, char **vendor) {
+static int dtid(const char *dtids_file, const char *compat_string, const char *class, char **name, char **vendor) {
 
     if (!compat_string) return 0;
 
     if (name) {
-        *name = scan_dtids_file(dtids_file, compat_string, NULL);
+        *name = scan_dtids_file(dtids_file, compat_string, class);
     }
     if (vendor) {
         char *c, *p;
@@ -120,13 +120,17 @@ int main(int argc, char *argv[]) {
     int found = 0;
 
     const char *dtids_file = dtids_file_loc;
+    const char *sclass = NULL;
     char *compat_string = NULL;
     int c;
 
     int opt_help = 0;
 
-    while ((c = getopt(argc, argv, "d:h")) != -1) {
+    while ((c = getopt(argc, argv, "c:d:h")) != -1) {
         switch (c) {
+            case 'c':
+                sclass = optarg;
+                break;
             case 'd':
                 dtids_file = optarg;
                 break;
@@ -156,7 +160,7 @@ int main(int argc, char *argv[]) {
         return 2;
     }
 
-    found = dtid(dtids_file, compat_string, &dn, &dv);
+    found = dtid(dtids_file, compat_string, sclass, &dn, &dv);
     if (found)
         printf("found: n='%s' v='%s'\n", dn, dv);
     else
