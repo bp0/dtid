@@ -13,11 +13,14 @@
 # before a string it would match.
 #
 
+    subsys operating-points-v2   Operating Performance Points v2
+    bus    simple-bus            simple memory-mapped bus
 vendor allwinner   AllWinner
 vendor amlogic     AMLogic
 vendor arm         ARM
     cpu arm,cortex-a53       Cortex A53
     cpu arm,cortex*          Cortex family
+    gpu arm,mali-450         Mali-450
 vendor brcm        Broadcom
     soc brcm,bcm2837         BCM2837        # RPi 3
     soc brcm,bcm2836         BCM2836        # RPi 2
@@ -49,6 +52,7 @@ vendor qcom        Qualcomm
     soc qcom,msm*            Snapdragon family
 vendor raspberrypi Raspberry Pi Foundation
     board raspberrypi,3-model-b-plus      3 Model B Plus
+    board raspberrypi,2-model-b           2 Model B
 vendor rockchip    RockChip
     soc rockchip,rk3399      RK3399     # Firefly Renegade Elite
     soc rockchip,rk3328      RK3328     # Firefly Renegade

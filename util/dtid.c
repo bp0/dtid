@@ -56,20 +56,22 @@ static char *scan_dtids_file(const char *dtids_file, const char *compat_string, 
         *b = 0; p = b + 1; DTID_FFWD();
         name = p; /* whatever is left is name */
 
-        /* class filter */
-        if (class)
+        if (class) {
+            /* class filter */
             if (strcmp(class, cls) != 0) continue;
 
-        /* wildcard */
-        b = strchr(cstr, '*');
-        if (b) {
-            *b = 0;
-            l = strlen(cstr);
-            if (strncmp(compat_string, cstr, l) == 0) {
-                fclose(fd);
-                return strdup(name);
-            } else
-                continue;
+            /* wildcard, allowed only when looking
+             * for a specific kind of thing */
+            b = strchr(cstr, '*');
+            if (b) {
+                *b = 0;
+                l = strlen(cstr);
+                if (strncmp(compat_string, cstr, l) == 0) {
+                    fclose(fd);
+                    return strdup(name);
+                } else
+                    continue;
+            }
         }
 
         /* exact match */
